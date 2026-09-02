@@ -1,0 +1,125 @@
+[
+  {
+    "slug": "beginner-route", "category": "getting-started", "updated": "2026-08-27", "badge": "Start", "minutes": 4,
+    "translations": {
+      "en": { "title": "Beginner Route", "excerpt": "Build the opening fishing, selling, buying, and quest loop without wasting early money.", "badge": "Start" },
+      "pt-br": { "title": "Rota iniciante", "excerpt": "Monte o ciclo inicial de pesca, venda, compras e missões sem desperdiçar dinheiro.", "badge": "Início" },
+      "es-419": { "title": "Ruta básica", "excerpt": "Forma el ciclo inicial de pesca, venta, compras y misiones sin desperdiciar dinero.", "badge": "Inicio" },
+      "ko": { "title": "초보 루트", "excerpt": "초반 자금 낭비 없이 낚시, 판매, 구매, 퀘스트 사이클을 완성하세요.", "badge": "시작" }
+    }
+  },
+  {
+    "slug": "money-and-gear-progression", "category": "getting-started", "updated": "2026-08-27", "badge": "Core", "minutes": 3,
+    "translations": {
+      "en": { "title": "Money & Gear Progression", "excerpt": "Turn catches and trick shots into the rods, weapons, and upgrades that keep progression moving.", "badge": "Core" },
+      "pt-br": { "title": "Progressão de dinheiro e equipamento", "excerpt": "Transforme capturas e trick shots nas varas, armas e upgrades que mantêm o progresso.", "badge": "Essencial" },
+      "es-419": { "title": "Progresión de dinero y equipo", "excerpt": "Convierte capturas y trick shots en cañas, armas y mejoras útiles.", "badge": "Esencial" },
+      "ko": { "title": "자금과 장비 진행", "excerpt": "포획과 트릭 샷을 필요한 낚싯대, 무기, 업그레이드로 바꾸세요.", "badge": "필수" }
+    }
+  },
+  {
+    "slug": "boss-island-walkthrough", "category": "bosses", "updated": "2026-08-27", "badge": "Route", "minutes": 4,
+    "translations": {
+      "en": { "title": "Boss & Island Walkthrough", "excerpt": "Follow island objectives, prepare required bait, defeat bosses, and unlock the next destination.", "badge": "Route" },
+      "pt-br": { "title": "Ilhas e chefes", "excerpt": "Siga objetivos, prepare iscas, derrote chefes e desbloqueie o próximo destino.", "badge": "Rota" },
+      "es-419": { "title": "Islas y jefes", "excerpt": "Sigue objetivos, prepara cebos, derrota jefes y desbloquea el siguiente destino.", "badge": "Ruta" },
+      "ko": { "title": "보스와 섬 공략", "excerpt": "섬 목표를 따라 미끼를 준비하고 보스를 물리쳐 다음 지역을 여세요.", "badge": "루트" }
+    }
+  },
+  {
+    "slug": "fishipedia-rare-variants", "category": "fishipedia", "updated": "2026-08-27", "badge": "Collection", "minutes": 4,
+    "translations": {
+      "en": { "title": "Fishipedia & Rare Variants", "excerpt": "Track ordinary creatures, rare Drip variants, locations, and collection cleanup.", "badge": "Collection" },
+      "pt-br": { "title": "Fishipedia e variantes raras", "excerpt": "Registre criaturas comuns, variantes Drip, locais e tarefas de coleção.", "badge": "Coleção" },
+      "es-419": { "title": "Fishipedia y variantes raras", "excerpt": "Registra criaturas comunes, variantes Drip, ubicaciones y limpieza de colección.", "badge": "Colección" },
+      "ko": { "title": "피쉬피디아와 희귀 변종", "excerpt": "일반 생물, 희귀 Drip 변종, 위치와 수집 마무리를 추적하세요.", "badge": "수집" }
+    }
+  },
+  {
+    "slug": "codes-status", "category": "codes", "updated": "2026-08-27", "badge": "Confirmed", "minutes": 2,
+    "translations": {
+      "en": { "title": "Redeem Codes Status", "excerpt": "How to Fish has no redemption-code system, so no active codes are available.", "badge": "Confirmed" },
+      "pt-br": { "title": "Status dos códigos", "excerpt": "How to Fish não tem sistema de resgate; portanto, não há códigos ativos.", "badge": "Confirmado" },
+      "es-419": { "title": "Estado de los códigos", "excerpt": "How to Fish no tiene sistema de canje; por eso no hay códigos activos.", "badge": "Confirmado" },
+      "ko": { "title": "교환 코드 상태", "excerpt": "How to Fish에는 코드 시스템이 없으므로 활성 코드가 없습니다.", "badge": "확인됨" }
+    }
+  },
+  {
+    "slug": "how-to-fish-guide", "category": "getting-started", "updated": "2026-08-28", "badge": "Core", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish guide", "excerpt": "A filtered, evidence-based route through all five islands and the post-game.", "badge": "Core", "seoTitle": "How to Fish guide — Islands, Bosses & Progression", "seoDescription": "How to Fish guide: follow the five-island route from Lighthouse to Volcano with objective order, bait checks, boss hand-ins, and post-game cleanup." }
+    }
+  },
+  {
+    "slug": "how-to-fish-beginner-guide", "category": "getting-started", "updated": "2026-08-28", "badge": "Start", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish beginner guide", "excerpt": "Start safely, earn early money, and avoid common first-island mistakes.", "badge": "Start", "seoTitle": "How to Fish Beginner Guide — First Islands & Money", "seoDescription": "How to Fish beginner guide: start with crabs, buy the first rod and knife, keep hunger high, upgrade storage, and move from Lighthouse to Forest." }
+    }
+  },
+  {
+    "slug": "how-to-fish-pufferfish-boss", "category": "bosses", "updated": "2026-08-28", "badge": "Boss", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish Pufferfish boss", "excerpt": "Use the Carrot route, respect poison clouds, and avoid preventable deaths.", "badge": "Boss", "seoTitle": "How to Fish Pufferfish Boss Guide — Island 3 Route", "seoDescription": "How to Fish Pufferfish boss guide explains the Carrot bait route on the desert island, poison-cloud spacing, ranged damage, and when to heal or retry." }
+    }
+  },
+  {
+    "slug": "how-to-fish-all-fish", "category": "fishipedia", "updated": "2026-08-28", "badge": "Collection", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish all fish", "excerpt": "Separate the normal collection from Drip variants before grinding.", "badge": "Collection", "seoTitle": "How to Fish All Fish Guide — Collector & Fishipedia", "seoDescription": "How to Fish all fish guide explains the 49-creature checklist, normal Collector entries, Drip Fishipedia variants, lure pools, and a low-waste cleanup order." }
+    }
+  },
+  {
+    "slug": "how-to-fish-map", "category": "guides", "updated": "2026-08-28", "badge": "Route", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish map", "excerpt": "Use Radar dots and route checkpoints without sailing in circles.", "badge": "Route", "seoTitle": "How to Fish Map Guide — Radar, Dots & Island Route", "seoDescription": "How to Fish map guide explains Radar coordinates, island dot colors, route order from Lighthouse to Volcano, and what to confirm before sailing onward." }
+    }
+  },
+  {
+    "slug": "how-to-fish-game-xbox", "category": "platforms", "updated": "2026-08-28", "badge": "Platform", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish Xbox", "excerpt": "Check the confirmed platform status before buying for console.", "badge": "Platform", "seoTitle": "How to Fish Xbox Status — PC, Steam Deck & Consoles", "seoDescription": "How to Fish Xbox status explains the confirmed PC release on Steam, why controller support is not an Xbox port, and what remains officially unannounced." }
+    }
+  },
+  {
+    "slug": "how-to-fish-game-ps5", "category": "platforms", "updated": "2026-08-28", "badge": "Platform", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish PS5", "excerpt": "See the confirmed release target and PlayStation controller nuance.", "badge": "Platform", "seoTitle": "How to Fish PS5 Status — Current Platform Answer", "seoDescription": "How to Fish PS5 status explains the confirmed Windows PC release, DualShock and DualSense support on PC, and why no PS5 port is confirmed before purchase." }
+    }
+  },
+  {
+    "slug": "how-to-fish-mods", "category": "mods-cheats", "updated": "2026-08-28", "badge": "Mods", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish mods", "excerpt": "Compare confirmed mod hubs and reduce installation risk.", "badge": "Mods", "seoTitle": "How to Fish Mods Guide — Nexus, Thunderstore & Safety", "seoDescription": "How to Fish mods guide compares Nexus and Thunderstore, explains BepInEx and mod-manager basics, and lists safe checks before installing community files." }
+    }
+  },
+  {
+    "slug": "how-to-fish-cheats", "category": "mods-cheats", "updated": "2026-08-28", "badge": "Caution", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish cheats", "excerpt": "Separate confirmed systems from risky third-party claims.", "badge": "Caution", "seoTitle": "How to Fish Cheats & Commands — What’s Confirmed", "seoDescription": "How to Fish cheats guide separates confirmed systems from third-party cheat tools, explains multiplayer risk, and flags unofficial methods as to be confirmed." }
+    }
+  },
+  {
+    "slug": "how-to-fish-trainer", "category": "mods-cheats", "updated": "2026-08-28", "badge": "Caution", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish trainer", "excerpt": "Evaluate trainer claims without treating rumors as facts.", "badge": "Caution", "seoTitle": "How to Fish Trainer Guide — Safe Use & Risk Check", "seoDescription": "How to Fish trainer guide explains why no official trainer is confirmed, how to evaluate third-party tools, and safer ways to change difficulty or use mods." }
+    }
+  },
+  {
+    "slug": "how-to-fish-game-price", "category": "purchase-access", "updated": "2026-08-28", "badge": "Purchase", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish price", "excerpt": "Use the official store and avoid unverified price claims.", "badge": "Purchase", "seoTitle": "How to Fish Price Guide — Steam Cost & Purchase", "seoDescription": "How to Fish price guide points to the official Steam store for the current regional price and explains why third-party price claims are to be confirmed." }
+    }
+  },
+  {
+    "slug": "how-to-fish-steam-key", "category": "purchase-access", "updated": "2026-08-28", "badge": "Purchase", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish Steam key", "excerpt": "Buy through the official route and check seller risk first.", "badge": "Purchase", "seoTitle": "How to Fish Steam Key Guide — Official Purchase Route", "seoDescription": "How to Fish Steam key guide explains the official Steam purchase route, gift and regional checks, and how to avoid unofficial or invalid key sellers." }
+    }
+  },
+  {
+    "slug": "how-to-fish-demo", "category": "purchase-access", "updated": "2026-08-28", "badge": "Status", "minutes": 9,
+    "translations": {
+      "en": { "title": "How to Fish demo", "excerpt": "Check trial availability without trusting unofficial APKs.", "badge": "Status", "seoTitle": "How to Fish Demo Status — Trial & Free Play Answer", "seoDescription": "How to Fish demo status explains that no demo is confirmed in current evidence, how to verify the Steam listing, and what free alternatives are to be confirmed." }
+    }
+  }
+]

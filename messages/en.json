@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "title": "How to Fish Wiki — Bosses, Fish & Walkthrough",
+    "description": "Master How to Fish with beginner routes, boss strategies, island progression, gear tips, rare catches, co-op advice, trick shots, and all 28 achievements.",
+    "keywords": ["How to Fish", "Steam", "wiki", "guide", "bosses", "fish", "Fishipedia", "walkthrough", "achievements", "co-op"]
+  },
+  "header": {
+    "siteName": "How to Fish Wiki",
+    "home": "Home",
+    "guides": "Guides",
+    "bosses": "Boss Guides",
+    "fishipedia": "Fishipedia",
+    "codes": "Codes",
+    "updates": "Updates",
+    "official": "Play on Steam",
+    "toggleTheme": "Toggle theme"
+  },
+  "home": {
+    "heroKicker": "Fan-Made Community Fishing Guide",
+    "heroTitle": "How to Fish",
+    "heroDescription": "Catch creatures, finish them with increasingly ridiculous weapons, sell the results, and upgrade your gear. Follow the island route, defeat dangerous bosses, and master profitable trick shots with friends.",
+    "trailerLabel": "Official Trailer",
+    "stats": [
+      { "icon": "🐟", "label": "Released Aug 20, 2026" },
+      { "icon": "🔄", "label": "Updated Aug 24, 2026" },
+      { "icon": "📈", "label": "1M+ Copies Sold" },
+      { "icon": "👥", "label": "373,971 Peak CCU" },
+      { "icon": "⭐", "label": "95% Positive Reviews" },
+      { "icon": "🏆", "label": "28 Achievements" }
+    ],
+    "actions": { "beginner": "Start Beginner Guide", "bosses": "Browse Boss Guides", "steam": "Play on Steam" },
+    "updatesTitle": "Latest Confirmed Status",
+    "updates": [
+      { "tag": "Release", "title": "How to Fish launched on Windows PC via Steam", "date": "Aug 20, 2026" },
+      { "tag": "Update", "title": "Official information was last refreshed on this research snapshot", "date": "Aug 24, 2026" },
+      { "tag": "Patch 1.0.9", "title": "Difficulty settings were added; save and connection fixes continued", "date": "Official announcements" }
+    ],
+    "journeyTitle": "Start Here",
+    "journeySubtitle": "Your How to Fish Journey",
+    "journey": [
+      { "number": "1", "title": "Beginner Guide", "description": "Learn the opening route, basic fishing controls, selling loop, first purchases, quest hand-ins, and the mistakes most likely to waste your early money." },
+      { "number": "2", "title": "Money & Gear Progression", "description": "Find out what to sell, which rods and weapons to buy first, and how trick-shot bonuses help fund stronger equipment during your first two hours." },
+      { "number": "3", "title": "Boss & Island Walkthrough", "description": "Follow each island objective in order, prepare the required bait, defeat its boss, and unlock the next destination without missing a progression trigger." },
+      { "number": "4", "title": "Fishipedia & Rare Variants", "description": "Track ordinary creatures, rare Drip variants, rods, lures, locations, boss catches, and the discoveries needed for collection-related achievements." }
+    ],
+    "popularTitle": "Popular Pages",
+    "allGuides": "All guides",
+    "popularSubtitle": "Practical routes for your next run",
+    "read": "Read",
+    "popular": [
+      { "slug": "beginner-route", "badge": "Start", "title": "Beginner Route", "description": "Build the core fishing, selling, buying, and quest loop before spending on optional gear." },
+      { "slug": "boss-island-walkthrough", "badge": "Route", "title": "Boss & Island Walkthrough", "description": "Keep island objectives and boss preparation in a repeatable progression order." },
+      { "slug": "fishipedia-rare-variants", "badge": "Collection", "title": "Fishipedia & Rare Variants", "description": "Organize creature discoveries, Drip variants, and collection-related cleanup." }
+    ],
+    "aboutTitle": "What is How to Fish?",
+    "about": "How to Fish is a physics-based fishing action simulator developed by Dazed Games for Windows PC. After a drunken boating accident leaves you stranded, you must catch and sell creatures, earn money, improve your equipment, and work through a chain of dangerous islands. Fishing is only the beginning: catches can be fought with melee weapons or firearms, launched into trick shots, cooked, collected, or risked through fish-based gambling. You can play alone or turn the journey into chaotic online co-op while completing quests, defeating bosses, and hunting rare variants.",
+    "statsTitle": "Game Snapshot",
+    "snapshot": [
+      { "label": "Developer", "value": "Dazed Games" },
+      { "label": "Platform", "value": "Windows PC via Steam" },
+      { "label": "Genre", "value": "Physics Fishing Action Simulator" },
+      { "label": "Copies Sold", "value": "1M+" },
+      { "label": "Peak CCU", "value": "373,971" },
+      { "label": "Positive Reviews", "value": "95%" },
+      { "label": "Achievements", "value": "28" },
+      { "label": "Lobby Size", "value": "Up to 8 Players" }
+    ],
+    "topicsTitle": "Explore the Wiki",
+    "topicsSubtitle": "Routes, bosses, collections, and official sources in one place.",
+    "topics": [
+      { "href": "/bosses", "title": "Boss Guides", "description": "Prepare island objectives, bait needs, and boss encounters in progression order." },
+      { "href": "/fishipedia", "title": "Fishipedia", "description": "Track catches, rare Drip variants, locations, and collection achievements." },
+      { "href": "/guides/money-and-gear-progression", "title": "Money & Gear", "description": "Turn catches and trick shots into the upgrades that keep runs moving." },
+      { "href": "/guides", "title": "Area Guides", "description": "Follow islands, quests, hand-ins, and the systems they unlock." },
+      { "href": "/guides/codes-status", "title": "Codes Status", "description": "How to Fish has no redemption-code system; active codes are therefore unavailable." },
+      { "href": "/updates", "title": "Official Updates", "description": "Use developer announcements as the source for patches and balance changes." }
+    ],
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Confirmed answers for new crews.",
+    "faq": [
+      { "question": "What is How to Fish?", "answer": "It is a physics-based fishing action simulator with combat, island progression, trick shots, cooking, gambling, bosses, and online co-op." },
+      { "question": "Who made the game?", "answer": "How to Fish was developed by Dazed Games." },
+      { "question": "Where can I play it?", "answer": "The confirmed release is Windows PC through Steam." },
+      { "question": "How many players can play together?", "answer": "Official Patch 1.0.4 raised lobby support to up to 8 players." },
+      { "question": "Are there active codes?", "answer": "No. The game does not have a redemption-code system, so this site lists codes as unavailable." }
+    ],
+    "ctaTitle": "Ready to Master How to Fish?",
+    "cta": "From your first improvised catch to the final island bosses, use our routes, equipment advice, Fishipedia references, and achievement guides to bring your crew home.",
+    "ctaPrimary": "Read the Beginner Guide",
+    "ctaSecondary": "Play on Steam"
+  },
+  "list": {
+    "breadcrumbRoot": "Home", "section": "Guides", "title": "Guide Library", "description": "Search the How to Fish guide set or filter by topic.", "searchPlaceholder": "Search bosses, fish, islands, gear...", "results": "{count, plural, one {# guide} other {# guides}}", "empty": "No guides matched your search.", "readMore": "Read more",
+    "categories": { "all": "All", "getting-started": "Getting Started", "bosses": "Bosses", "fishipedia": "Fishipedia", "codes": "Codes", "platforms": "Platforms", "mods-cheats": "Mods & Cheats", "purchase-access": "Purchase & Access" }
+  },
+  "category": { "breadcrumbRoot": "Home", "eyebrow": "Topic hub", "articles": "{count, plural, one {# guide} other {# guides}}", "empty": "No public guides are attached to this topic yet.", "browseAll": "Browse the full guide library" },
+  "detail": { "breadcrumbRoot": "Home", "back": "Back to guide library", "sectionNav": "In this section", "nextSteps": "Next Steps", "relatedTitle": "Related Reading", "minutes": "{minutes} min read", "tip": "Tip", "warning": "Warning", "updated": "Updated {value}" },
+  "sidebar": {
+    "sections": [
+      { "title": "Getting Started", "count": 3, "links": [ { "label": "Overview", "href": "/guides" }, { "label": "Beginner Guide", "href": "/guides/beginner-route", "badge": "Start" }, { "label": "Money & Gear", "href": "/guides/money-and-gear-progression", "badge": "Core" } ] },
+      { "title": "Bosses & Islands", "count": 2, "links": [ { "label": "Boss Hub", "href": "/bosses" }, { "label": "Boss & Island Route", "href": "/guides/boss-island-walkthrough" } ] },
+      { "title": "Fishipedia", "count": 2, "links": [ { "label": "Fishipedia Hub", "href": "/fishipedia" }, { "label": "Rare Variants", "href": "/guides/fishipedia-rare-variants" } ] },
+      { "title": "Redeem Codes", "count": 2, "links": [ { "label": "Codes Status", "href": "/guides/codes-status" }, { "label": "None available", "href": "/guides/codes-status" } ] },
+      { "title": "Updates", "count": 1, "links": [ { "label": "Official Updates", "href": "/updates" } ] }
+    ]
+  },
+  "footer": {
+    "siteName": "How to Fish Wiki",
+    "description": "Chaotic physics-based fishing action on Steam with island quests, weapons, bosses, rare catches, and online co-op.",
+    "disclaimer": "How to Fish Wiki is an independent fan-made guide. It is not affiliated with Dazed Games or Valve, and game names and assets belong to their respective owners.",
+    "quickLinks": "Quick Links", "content": "Content", "home": "Home", "guides": "Guides", "beginner": "Beginner Guide", "bosses": "Boss & Island Route", "fishipedia": "Fishipedia & Rare Variants", "officialLinks": "Official Links", "playGame": "Play on Steam", "announcements": "Official Announcements", "discussions": "Steam Discussions", "discord": "Official Discord", "youtube": "Official YouTube", "trailer": "Official Trailer", "legal": "Legal", "privacy": "Privacy Policy", "terms": "Terms of Service", "contact": "Contact", "email": "To be confirmed", "copyright": "© {year} How to Fish Wiki."
+  },
+  "legal": {
+    "updated": "Last updated: Sep 1, 2026",
+    "privacyTitle": "Privacy Policy",
+    "privacyIntro": "This independent fan-made wiki does not claim ownership of How to Fish, Dazed Games, Steam, or any related assets. It provides informational guides and links to official sources.",
+    "privacySections": [
+      { "title": "Information We Collect", "value": "This static wiki does not require an account and does not intentionally collect personal information through its public guide pages." },
+      { "title": "Third-Party Links", "value": "Official Steam, YouTube, and Discord links open third-party services. Their own policies govern data handled on those platforms." },
+      { "title": "Changes", "value": "If tracking, analytics, or data collection is added later, this policy will be updated before that change goes live." }
+    ],
+    "termsTitle": "Terms of Service",
+    "termsIntro": "By using this fan wiki, you agree to use it for informational purposes and to follow the terms of the official platforms and game services linked from these pages.",
+    "termsSections": [
+      { "title": "Fan Project", "value": "This site is unofficial. How to Fish and related names or assets belong to Dazed Games and their respective owners." },
+      { "title": "Accuracy", "value": "Guides reflect the dated research used to build them. Confirmed numbers and release details are labeled; unavailable information is marked as to be confirmed." },
+      { "title": "No Affiliation", "value": "This wiki is not affiliated with, endorsed by, or sponsored by Dazed Games or Valve." }
+    ]
+  },
+  "notFound": { "title": "Page not found", "description": "The page may have moved or does not exist yet.", "action": "Return home" }
+}

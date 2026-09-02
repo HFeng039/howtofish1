@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "bosses", "featuredSlugs": ["boss-island-walkthrough"],
+    "translations": {
+      "en": { "title": "Boss Guides", "description": "Prepare island objectives, bait needs, and boss encounters in progression order.", "overview": "Boss fights reward preparation more than raw level. Follow island objectives in order, confirm required bait, and keep progression triggers on one repeatable route.", "stats": [ { "label": "Focus", "value": "Mechanics" }, { "label": "Planning", "value": "Per attempt" }, { "label": "Source", "value": "Official announcements" } ] },
+      "pt-br": { "title": "Guias de chefes", "description": "Prepare objetivos de ilha, iscas e confrontos na ordem da progressão.", "overview": "Chefes recompensam preparo mais do que nível. Siga os objetivos, confirme as iscas necessárias e mantenha a progressão em uma rota repetível.", "stats": [ { "label": "Foco", "value": "Mecânicas" }, { "label": "Planejamento", "value": "Por tentativa" }, { "label": "Fonte", "value": "Comunicados oficiais" } ] },
+      "es-419": { "title": "Guías de jefes", "description": "Prepara objetivos de islas, cebos y encuentros en orden de progresión.", "overview": "Los jefes premian la preparación más que el nivel. Sigue los objetivos, confirma el cebo necesario y mantén una ruta de progresión repetible.", "stats": [ { "label": "Enfoque", "value": "Mecánicas" }, { "label": "Planificación", "value": "Por intento" }, { "label": "Fuente", "value": "Anuncios oficiales" } ] },
+      "ko": { "title": "보스 공략", "description": "섬 목표, 미끼, 보스 전투를 진행 순서로 준비하세요.", "overview": "보스는 단순한 레벨보다 준비를 더 중요하게 만듭니다. 섬 목표를 순서대로 확인하고 필요한 미끼와 진행 트리거를 하나의 루트로 정리하세요.", "stats": [ { "label": "초점", "value": "메커니즘" }, { "label": "준비", "value": "시도별" }, { "label": "출처", "value": "공식 공지" } ] }
+    }
+  },
+  {
+    "slug": "fishipedia", "featuredSlugs": ["fishipedia-rare-variants"],
+    "translations": {
+      "en": { "title": "Fishipedia", "description": "Track catches, rare Drip variants, locations, and collection achievements.", "overview": "Use Fishipedia references to separate ordinary creatures from rare Drip variants and to organize the discoveries behind collection-related achievements.", "stats": [ { "label": "Achievements", "value": "28" }, { "label": "Rare variant", "value": "Drip" }, { "label": "Status", "value": "Research snapshot" } ] },
+      "pt-br": { "title": "Fishipedia", "description": "Acompanhe capturas, variantes Drip raras, locais e conquistas de coleção.", "overview": "Use a Fishipedia para separar criaturas comuns de variantes Drip e organizar as descobertas das conquistas de coleção.", "stats": [ { "label": "Conquistas", "value": "28" }, { "label": "Variante rara", "value": "Drip" }, { "label": "Status", "value": "Pesquisa datada" } ] },
+      "es-419": { "title": "Fishipedia", "description": "Sigue capturas, variantes Drip raras, ubicaciones y logros de colección.", "overview": "Usa Fishipedia para separar criaturas comunes de variantes Drip y organizar los descubrimientos de los logros de colección.", "stats": [ { "label": "Logros", "value": "28" }, { "label": "Variante rara", "value": "Drip" }, { "label": "Estado", "value": "Investigación fechada" } ] },
+      "ko": { "title": "피쉬피디아", "description": "포획, 희귀 Drip 변종, 위치, 수집 업적을 추적하세요.", "overview": "피쉬피디아로 일반 생물과 희귀 Drip 변종을 구분하고 수집 관련 업적의 발견 정보를 정리하세요.", "stats": [ { "label": "업적", "value": "28개" }, { "label": "희귀 변종", "value": "Drip" }, { "label": "상태", "value": "조사 시점" } ] }
+    }
+  },
+  {
+    "slug": "codes", "featuredSlugs": ["codes-status"],
+    "translations": {
+      "en": { "title": "Codes Status", "description": "Confirmed redemption-code availability for How to Fish.", "overview": "How to Fish does not have a redemption-code system. This hub intentionally lists no codes instead of inventing rewards or expiration dates.", "stats": [ { "label": "System", "value": "None" }, { "label": "Active codes", "value": "None available" }, { "label": "Source", "value": "Official announcements" } ] },
+      "pt-br": { "title": "Status de códigos", "description": "Disponibilidade confirmada de códigos em How to Fish.", "overview": "How to Fish não tem sistema de resgate de códigos. Esta página não inventa recompensas ou prazos.", "stats": [ { "label": "Sistema", "value": "Não existe" }, { "label": "Códigos ativos", "value": "Nenhum disponível" }, { "label": "Fonte", "value": "Comunicados oficiais" } ] },
+      "es-419": { "title": "Estado de códigos", "description": "Disponibilidad confirmada de códigos en How to Fish.", "overview": "How to Fish no tiene sistema de canje. Esta página no inventa recompensas ni fechas de vencimiento.", "stats": [ { "label": "Sistema", "value": "No existe" }, { "label": "Códigos activos", "value": "Ninguno disponible" }, { "label": "Fuente", "value": "Anuncios oficiales" } ] },
+      "ko": { "title": "코드 상태", "description": "How to Fish의 코드 사용 가능 여부.", "overview": "How to Fish에는 코드 입력 시스템이 없습니다. 이 허브는 보상이나 만료일을 만들지 않습니다.", "stats": [ { "label": "시스템", "value": "없음" }, { "label": "활성 코드", "value": "사용 가능한 코드 없음" }, { "label": "출처", "value": "공식 공지" } ] }
+    }
+  },
+  {
+    "slug": "updates", "featuredSlugs": ["codes-status", "beginner-route"],
+    "translations": {
+      "en": { "title": "Official Updates", "description": "Use dated official announcements for patches and balance changes.", "overview": "This research snapshot records the Aug 20, 2026 release, an Aug 24, 2026 refresh, and official Patch 1.0.9 notes about difficulty, save, and connection fixes.", "stats": [ { "label": "Released", "value": "Aug 20, 2026" }, { "label": "Refreshed", "value": "Aug 24, 2026" }, { "label": "Patch", "value": "1.0.9" } ] },
+      "pt-br": { "title": "Atualizações oficiais", "description": "Use comunicados oficiais datados para patches e mudanças.", "overview": "Este registro pesquisa o lançamento de 20 de ago. de 2026, a atualização de 24 de ago. e o Patch 1.0.9 oficial sobre dificuldade, saves e conexão.", "stats": [ { "label": "Lançamento", "value": "20 de ago. de 2026" }, { "label": "Atualização", "value": "24 de ago. de 2026" }, { "label": "Patch", "value": "1.0.9" } ] },
+      "es-419": { "title": "Actualizaciones oficiales", "description": "Usa anuncios oficiales fechados para parches y cambios.", "overview": "Este registro incluye el lanzamiento del 20 de ago. de 2026, la actualización del 24 de ago. y el parche oficial 1.0.9 sobre dificultad, guardado y conexión.", "stats": [ { "label": "Lanzamiento", "value": "20 de ago. de 2026" }, { "label": "Actualizado", "value": "24 de ago. de 2026" }, { "label": "Parche", "value": "1.0.9" } ] },
+      "ko": { "title": "공식 업데이트", "description": "패치와 밸런스 정보는 날짜가 있는 공식 공지를 사용하세요.", "overview": "이 조사 기록에는 2026년 8월 20일 출시, 8월 24일 확인 정보, 난이도·저장·연결 수정이 포함된 공식 패치 1.0.9가 있습니다.", "stats": [ { "label": "출시", "value": "2026년 8월 20일" }, { "label": "확인", "value": "2026년 8월 24일" }, { "label": "패치", "value": "1.0.9" } ] }
+    }
+  }
+]

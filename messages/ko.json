@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "낚시 방법 How to Fish 위키 — 보스, 물고기, 공략",
+    "description": "How to Fish의 초보 루트, 보스 전략, 섬 진행, 장비 팁, 희귀 포획, 협동 플레이, 트릭 샷, 28개 업적 정보를 확인하세요.",
+    "keywords": ["낚시 방법", "How to Fish", "Steam", "위키", "공략", "보스", "물고기", "Fishipedia", "업적", "협동"]
+  },
+  "header": { "siteName": "How to Fish 위키", "home": "홈", "guides": "공략", "bosses": "보스", "fishipedia": "피쉬피디아", "codes": "코드", "updates": "업데이트", "official": "Steam에서 플레이", "toggleTheme": "테마 전환" },
+  "home": {
+    "heroKicker": "팬 제작 커뮤니티 가이드", "heroTitle": "낚시 방법 How to Fish", "heroDescription": "생물을 포획하고 점점 더 터무니없는 무기로 처리한 뒤 판매하고 장비를 업그레이드하세요. 섬 루트를 따라 위험한 보스를 물리치고, 친구들과 수익성 높은 트릭 샷을 완성하세요.", "trailerLabel": "공식 트레일러",
+    "stats": [ { "icon": "🐟", "label": "2026년 8월 20일 출시" }, { "icon": "🔄", "label": "2026년 8월 24일 업데이트" }, { "icon": "📈", "label": "100만 판매 이상" }, { "icon": "👥", "label": "최고 동시접속 373,971명" }, { "icon": "⭐", "label": "긍정 평가 95%" }, { "icon": "🏆", "label": "업적 28개" } ],
+    "actions": { "beginner": "초보 공략 보기", "bosses": "보스 공략 보기", "steam": "Steam에서 플레이" },
+    "updatesTitle": "확인된 최신 상태", "updates": [ { "tag": "출시", "title": "Steam에서 Windows PC용으로 출시", "date": "2026년 8월 20일" }, { "tag": "업데이트", "title": "이 조사 자료 기준 공식 정보 확인", "date": "2026년 8월 24일" }, { "tag": "패치 1.0.9", "title": "난이도 설정이 추가되고 저장 및 연결 문제 수정이 계속됨", "date": "공식 공지" } ],
+    "journeyTitle": "여기서 시작", "journeySubtitle": "How to Fish 여정",
+    "journey": [ { "number": "1", "title": "초보 공략", "description": "초기 루트, 낚시 조작, 판매 사이클, 첫 구매, 퀘스트 제출과 자금 낭비로 이어지는 실수를 학습하세요." }, { "number": "2", "title": "자금과 장비", "description": "무엇을 팔고 어떤 낚싯대와 무기를 먼저 살지, 트릭 샷 보너스로 어떻게 첫 2시간 동안 장비를 강화하는지 확인하세요." }, { "number": "3", "title": "보스와 섬", "description": "섬 목표를 순서대로 진행하고 필요한 미끼를 준비한 뒤 보스를 물리치고 다음 지역을 여세요." }, { "number": "4", "title": "피쉬피디아와 희귀 변종", "description": "일반 생물, 희귀 Drip 변종, 낚싯대, 미끼, 위치, 보스 포획과 수집 업적을 정리하세요." } ],
+    "popularTitle": "인기 페이지", "allGuides": "전체 공략", "popularSubtitle": "다음 플레이에 필요한 실전 루트", "read": "읽기",
+    "popular": [ { "slug": "beginner-route", "badge": "시작", "title": "초보 루트", "description": "선택 장비를 사기 전에 낚시, 판매, 구매, 퀘스트 사이클을 먼저 완성하세요." }, { "slug": "boss-island-walkthrough", "badge": "루트", "title": "보스와 섬 공략", "description": "섬 목표와 보스 준비를 반복 가능한 순서로 정리합니다." }, { "slug": "fishipedia-rare-variants", "badge": "수집", "title": "피쉬피디아와 희귀 변종", "description": "발견 정보, Drip 변종, 수집 마무리를 정리합니다." } ],
+    "aboutTitle": "How to Fish란?", "about": "How to Fish는 Dazed Games가 Windows PC용으로 개발한 물리 기반 낚시 액션 시뮬레이터입니다. 배 사고 이후 생물을 포획·판매하고 자금을 모아 장비를 개선하며 위험한 섬들을 진행합니다. 낚시만 끝이 아니라 무기 전투, 트릭 샷, 요리, 수집, 도박이 이어지고, 최대 8인 온라인 협동으로 퀘스트와 보스, 희귀 변종을 함께 추구할 수 있습니다.",
+    "statsTitle": "게임 요약",
+    "snapshot": [ { "label": "개발사", "value": "Dazed Games" }, { "label": "플랫폼", "value": "Steam Windows PC" }, { "label": "장르", "value": "물리 기반 낚시 액션 시뮬레이터" }, { "label": "판매", "value": "100만 이상" }, { "label": "최고 동시접속", "value": "373,971명" }, { "label": "긍정 평가", "value": "95%" }, { "label": "업적", "value": "28개" }, { "label": "로비", "value": "최대 8인" } ],
+    "topicsTitle": "위키 탐색", "topicsSubtitle": "루트, 보스, 수집, 공식 출처를 한 곳에서.",
+    "topics": [ { "href": "/bosses", "title": "보스 공략", "description": "섬 목표, 미끼, 보스 전투를 진행 순서로 준비합니다." }, { "href": "/fishipedia", "title": "피쉬피디아", "description": "포획, Drip 변종, 위치, 수집 업적을 추적합니다." }, { "href": "/guides/money-and-gear-progression", "title": "자금과 장비", "description": "포획과 트릭 샷을 필요한 업그레이드로 바꿉니다." }, { "href": "/guides", "title": "지역 공략", "description": "섬, 퀘스트, 제출처와 잠금 해제를 따라갑니다." }, { "href": "/guides/codes-status", "title": "코드 상태", "description": "How to Fish는 코드 시스템이 없으므로 활성 코드가 없습니다." }, { "href": "/updates", "title": "공식 업데이트", "description": "패치와 밸런스 정보는 개발사 공지를 사용합니다." } ],
+    "faqTitle": "자주 묻는 질문", "faqSubtitle": "새 파티를 위한 확인된 답변.",
+    "faq": [ { "question": "How to Fish는 어떤 게임인가요?", "answer": "전투, 섬 진행, 트릭 샷, 요리, 도박, 보스, 온라인 협동이 있는 물리 기반 낚시 액션 시뮬레이터입니다." }, { "question": "누가 개발했나요?", "answer": "Dazed Games가 개발했습니다." }, { "question": "어디서 플레이하나요?", "answer": "Steam의 Windows PC 버전으로 출시가 확인되었습니다." }, { "question": "몇 명까지 함께 플레이할 수 있나요?", "answer": "공식 패치 1.0.4에서 로비가 최대 8인까지 지원되었습니다." }, { "question": "활성 코드가 있나요?", "answer": "없습니다. 게임에 코드 입력 시스템이 없습니다." } ],
+    "ctaTitle": "How to Fish를 완전히 익힐 준비가 됐나요?", "cta": "첫 포획부터 마지막 섬 보스까지 루트, 장비 조언, 피쉬피디아 자료, 업적 공략으로 파티를 집으로 데려오세요.", "ctaPrimary": "초보 공략 읽기", "ctaSecondary": "Steam에서 플레이"
+  },
+  "list": { "breadcrumbRoot": "홈", "section": "공략", "title": "공략 라이브러리", "description": "How to Fish 공략을 검색하거나 주제로 필터링하세요.", "searchPlaceholder": "보스, 물고기, 섬, 장비 검색...", "results": "공략 {count}개", "empty": "검색 결과가 없습니다.", "readMore": "더 보기", "categories": { "all": "전체", "getting-started": "입문", "bosses": "보스", "fishipedia": "피쉬피디아", "codes": "코드", "platforms": "플랫폼", "mods-cheats": "모드와 치트", "purchase-access": "구매와 접근" } },
+  "category": { "breadcrumbRoot": "홈", "eyebrow": "허브", "articles": "공략 {count}개", "empty": "이 주제에는 아직 공개된 공략이 없습니다.", "browseAll": "전체 공략 보기" },
+  "detail": { "breadcrumbRoot": "홈", "back": "공략 라이브러리로", "sectionNav": "이 섹션", "nextSteps": "다음 단계", "relatedTitle": "관련 읽기", "minutes": "{minutes}분 읽기", "tip": "팁", "warning": "주의", "updated": "{value} 업데이트" },
+  "sidebar": {
+    "sections": [
+      { "title": "시작하기", "count": 3, "links": [ { "label": "개요", "href": "/guides" }, { "label": "초보 공략", "href": "/guides/beginner-route", "badge": "시작" }, { "label": "자금과 장비", "href": "/guides/money-and-gear-progression", "badge": "필수" } ] },
+      { "title": "보스와 섬", "count": 2, "links": [ { "label": "보스 허브", "href": "/bosses" }, { "label": "섬 루트", "href": "/guides/boss-island-walkthrough" } ] },
+      { "title": "피쉬피디아", "count": 2, "links": [ { "label": "피쉬피디아 허브", "href": "/fishipedia" }, { "label": "희귀 변종", "href": "/guides/fishipedia-rare-variants" } ] },
+      { "title": "교환 코드", "count": 2, "links": [ { "label": "코드 상태", "href": "/guides/codes-status" }, { "label": "사용 가능한 코드 없음", "href": "/guides/codes-status" } ] },
+      { "title": "업데이트", "count": 1, "links": [ { "label": "공식 업데이트", "href": "/updates" } ] }
+    ]
+  },
+  "footer": {
+    "siteName": "How to Fish 위키", "description": "Steam의 물리 기반 혼돈 낚시 액션. 섬 퀘스트, 무기, 보스, 희귀 포획, 온라인 협동을 다룹니다.", "disclaimer": "How to Fish 위키는 독립적인 팬 가이드입니다. Dazed Games 및 Valve와 제휴하지 않으며 게임 이름과 자산은 각 소유자에게 있습니다.",
+    "quickLinks": "빠른 링크", "content": "콘텐츠", "home": "홈", "guides": "공략", "beginner": "초보 공략", "bosses": "보스와 섬", "fishipedia": "피쉬피디아와 희귀 변종", "officialLinks": "공식 링크", "playGame": "Steam에서 플레이", "announcements": "공식 공지", "discussions": "Steam 토론", "discord": "공식 Discord", "youtube": "공식 YouTube", "trailer": "공식 트레일러", "legal": "법적 고지", "privacy": "개인정보 처리방침", "terms": "서비스 약관", "contact": "연락처", "email": "확인 필요", "copyright": "© {year} How to Fish Wiki."
+  },
+  "legal": {
+    "updated": "마지막 업데이트: 2026년 9월 1일", "privacyTitle": "개인정보 처리방침", "privacyIntro": "이 독립 팬 위키는 How to Fish, Dazed Games, Steam 또는 관련 자산의 소유권을 주장하지 않으며 정보성 가이드와 공식 링크를 제공합니다.",
+    "privacySections": [ { "title": "수집 정보", "value": "이 정적 위키는 계정을 요구하지 않으며 공개 페이지에서 개인정보를 의도적으로 수집하지 않습니다." }, { "title": "제3자 링크", "value": "공식 링크는 외부 서비스를 열며 해당 서비스의 정책이 적용됩니다." }, { "title": "변경", "value": "추적이나 데이터 수집을 추가하면 변경 전에 이 방침을 업데이트합니다." } ],
+    "termsTitle": "서비스 약관", "termsIntro": "이 팬 위키를 사용하면 정보 제공 목적으로 이용하고 연결된 공식 플랫폼의 약관을 따르는 데 동의합니다.",
+    "termsSections": [ { "title": "팬 프로젝트", "value": "이 사이트는 비공식입니다. How to Fish와 관련 이름 또는 자산은 Dazed Games와 각 소유자에게 있습니다." }, { "title": "정확성", "value": "공략은 작성에 사용한 조사 시점을 반영하며, 확인되지 않은 정보는 “확인 필요”로 표시합니다." }, { "title": "비제휴", "value": "이 위키는 Dazed Games나 Valve의 승인, 후원, 제휴를 받지 않습니다." } ]
+  },
+  "notFound": { "title": "페이지를 찾을 수 없음", "description": "페이지가 이동했거나 아직 없을 수 있습니다.", "action": "홈으로 돌아가기" }
+}
