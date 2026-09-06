@@ -14,6 +14,14 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
+const googleAnalyticsId = "G-WJPGF4Q40F";
+const googleAnalyticsScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${googleAnalyticsId}');
+`;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -65,6 +73,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+        <script dangerouslySetInnerHTML={{ __html: googleAnalyticsScript }} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="font-sans antialiased">

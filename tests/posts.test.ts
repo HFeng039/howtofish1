@@ -145,3 +145,16 @@ describe("homepage trailer", () => {
     expect(home).not.toContain('href={officialLinks.trailer}');
   });
 });
+
+describe("analytics", () => {
+  it("injects the Google tag once in the shared locale layout head", () => {
+    const layout = readFileSync("src/app/[locale]/layout.tsx", "utf8");
+
+    expect(layout).toContain('const googleAnalyticsId = "G-WJPGF4Q40F";');
+    expect(layout.match(/G-WJPGF4Q40F/g)).toHaveLength(1);
+    expect(layout.indexOf("googletagmanager.com")).toBeGreaterThan(layout.indexOf("<head>"));
+    expect(layout.indexOf("<script async")).toBeGreaterThan(layout.indexOf("<head>"));
+    expect(layout.match(/<script async/g)).toHaveLength(1);
+    expect(layout).toContain("gtag('config', '${googleAnalyticsId}");
+  });
+});
