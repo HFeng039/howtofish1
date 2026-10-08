@@ -2,9 +2,10 @@ name: content-sync
 
 on:
   schedule:
-    # 00:17 UTC every Monday = 08:17 Asia/Shanghai.
+    # Official sync only; collect/update stays manual to avoid paid API usage.
+    # Runs every 3 days at 08:17 Asia/Shanghai.
     # Disable this workflow in GitHub Actions to stop scheduled monitoring.
-    - cron: "17 0 * * 1"
+    - cron: "17 0 */3 * *"
   workflow_dispatch:
     inputs:
       game:
