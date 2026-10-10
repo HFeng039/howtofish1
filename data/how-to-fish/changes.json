@@ -1,0 +1,22 @@
+{
+  "ranAt": "2026-10-10T05:56:13.154Z",
+  "changes": [
+    {
+      "game": "how-to-fish",
+      "source": "steam-game",
+      "reason": "initial snapshot"
+    },
+    {
+      "game": "how-to-fish",
+      "source": "steam-news",
+      "reason": "initial snapshot",
+      "entries": [
+        "HOW TO FISH DRIP GAR + FISHERMAN PLUSH https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1845383656378133",
+        "TINY PATCH 1.1.3 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498234256",
+        "SMALL BUGFIXING PATCH 1.1.2 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498233529",
+        "The truly hilarious co-op game How to Fish gets a first content update https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1844751498233373",
+        "THE ISLET UPDATE 1.1.0 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498231646"
+      ]
+    }
+  ]
+}
