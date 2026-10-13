@@ -2,6 +2,24 @@
   "appId": "4001890",
   "items": [
     {
+      "gid": "1846018067940924",
+      "title": "How to Fish продалась тиражом в 10 миллионов копий - рыболовный шутер готовится к выходу на консолях",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1846018067940924",
+      "author": "",
+      "feedLabel": "PlayGround.ru - официальная группа",
+      "date": "2026-10-12T13:21:26.000Z",
+      "excerpt": "Кооперативный шутер про рыбалку How to Fish стал одним из заметных хитов Steam: менее чем за два месяца после релиза продажи игры достигли 10 миллионов копий. Об этом сообщили разработчики из Dazed Games, поблагодарив игроков за поддержку и положительные отзывы. Игра вышла в Steam 20 августа, а уже через два дня преодолела отметку в миллион проданных копий. К 12 октября аудитория проекта помогла ему достичь десятикратного результата. При цене в 359 рублей такой успех особенно примечателен для иг"
+    },
+    {
+      "gid": "1846018067940683",
+      "title": "10 MILLION FISHERMEN WITHIN 2 MONTHS",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067940683",
+      "author": "contact",
+      "feedLabel": "Community Announcements",
+      "date": "2026-10-12T11:42:43.000Z",
+      "excerpt": "Helo : )We just want to thank you to all the 10 MILLION PLAYERS who played our relaxing little fishing game! We truly appreciate all the very overwhelming feedback from everyone : )We know we've been quiet for a bit now but we're doing stuff behind the scenes, no need to worry. We'll be working on a bigger content update, porting to consoles and bugfixes in the coming months. We hope you can hold on until then!Thanks!Carl-Vilhelm & Melvin"
+    },
+    {
       "gid": "1845383656378133",
       "title": "HOW TO FISH DRIP GAR + FISHERMAN PLUSH",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1845383656378133",
@@ -162,25 +180,7 @@
       "feedLabel": "Community Announcements",
       "date": "2026-08-23T20:40:39.000Z",
       "excerpt": "Hello!Small patch with few bugfixesFixesNow checks save file before trying to load, no longer causing fake servers being displayed with the name \"Game Name\"No longer saves server or local when application crashes. It now instead saves when the user presses the Save-, Main Menu- and Quit-button. They are still autosaved every minute so you don't lose that much progress even if you crash. //Carl-Vilhelm & Melvin"
-    },
-    {
-      "gid": "1841579228673437",
-      "title": "1 MILLION FISHERMEN IN 2 DAYS?!?!1?",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228673437",
-      "author": "contact",
-      "feedLabel": "Community Announcements",
-      "date": "2026-08-23T13:34:59.000Z",
-      "excerpt": "WE HIT 1 MILLION FISHERMEN! THANK YOU ALL!Yes, we'll be adding more content!Yes, we'll be fixing bugs!Best,Carl-Vilhelm & Melvin"
-    },
-    {
-      "gid": "1841579228671636",
-      "title": "PATCH 1.0.5",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228671636",
-      "author": "contact",
-      "feedLabel": "Community Announcements",
-      "date": "2026-08-22T15:33:41.000Z",
-      "excerpt": "Hello!Slightly bigger patch than last time, fixing some bugs and adding some QoL optionsNEWAdded option to invert axis on x and y for looking aroundAdded option to host a private lobby, only joinable through inviteAdded option to change session type in server settings while in-game (requires restart after changing)ChangesChanged minimum locked fps 50 -> 30FixesFixed a bug where you were able to travel to any island without unlocking them (sorry speedrunners)Fixed a bug where skins in the slotmac"
     }
   ],
-  "fetchedAt": "2026-10-10T05:56:13.154Z"
+  "fetchedAt": "2026-10-13T06:49:24.330Z"
 }

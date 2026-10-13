@@ -1,21 +1,16 @@
 {
-  "ranAt": "2026-10-10T05:56:13.154Z",
+  "ranAt": "2026-10-13T06:49:24.330Z",
   "changes": [
     {
       "game": "how-to-fish",
-      "source": "steam-game",
-      "reason": "initial snapshot"
-    },
-    {
-      "game": "how-to-fish",
       "source": "steam-news",
-      "reason": "initial snapshot",
+      "reason": "Steam news or announcements changed",
       "entries": [
+        "How to Fish продалась тиражом в 10 миллионов копий - рыболовный шутер готовится к выходу на консолях https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1846018067940924",
+        "10 MILLION FISHERMEN WITHIN 2 MONTHS https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1846018067940683",
         "HOW TO FISH DRIP GAR + FISHERMAN PLUSH https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1845383656378133",
         "TINY PATCH 1.1.3 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498234256",
-        "SMALL BUGFIXING PATCH 1.1.2 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498233529",
-        "The truly hilarious co-op game How to Fish gets a first content update https://steamstore-a.akamaihd.net/news/externalpost/GamingOnLinux/1844751498233373",
-        "THE ISLET UPDATE 1.1.0 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498231646"
+        "SMALL BUGFIXING PATCH 1.1.2 https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1844751498233529"
       ]
     }
   ]
