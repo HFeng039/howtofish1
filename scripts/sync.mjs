@@ -11,14 +11,19 @@
  * Files under data/<slug>/ are written only when content actually changed,
  * so a clean run leaves the git tree untouched.
  *
- * Add a game: create games/<slug>.json (+ keywords/<slug>.json for stage 2).
+ * Add a game: create games/<slug>.json. Stage 2 reads page-plan.json or another
+ * page JSON and derives a temporary collect-keywords file automatically.
+ * keywords/<slug>.json remains supported as a fallback.
  *
  * Subcommands:
  *   sync [--game <slug>]     monitor all games or one game (default, used by CI)
  *   collect --game <slug>    stage 2: run game-material collect locally
  *   update  --game <slug>    sync, then collect
+ *   publish --game <slug>    build, commit, push, and let Vercel deploy
  */
 import { spawn } from "node:child_process";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
@@ -37,6 +42,8 @@ const DEFAULT_UPDATE_TITLE_PATTERN = "update|code|event|new";
 const GAME_MATERIAL_SCRIPT =
   process.env.GAME_MATERIAL_SCRIPT ||
   "/Users/fh/Documents/coding/优秀游戏站总结/game-material-scraper/collect_material.py";
+
+const execFileAsync = promisify(execFile);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const sha1 = (value) => createHash("sha1").update(value).digest("hex");
@@ -473,31 +480,366 @@ function usage() {
     "  node scripts/sync.mjs                     # monitor all games (default, CI)",
     "  node scripts/sync.mjs sync                # same as above",
     "  node scripts/sync.mjs sync --game <slug>  # monitor one game",
-    "  node scripts/sync.mjs collect --game <slug> [collect_material.py args]",
-    "  node scripts/sync.mjs update --game <slug> [collect_material.py args]",
+    "  node scripts/sync.mjs collect --game <slug> [--keyword-source <page.json>] [collect_material.py args]",
+    "  node scripts/sync.mjs update --game <slug> [--keyword-source <page.json>] [collect_material.py args]",
+    "  node scripts/sync.mjs publish --game <slug> [--message <message>]",
+    "",
+    "Publishing is explicit: add --publish, or set publish.enabled in games/<slug>.json.",
   ].join("\n");
 }
 
 function parseGameArgs(argv) {
   let game = "";
+  let keywordSource = "";
+  let publish;
+  let message = "";
   const passthrough = [];
   for (let index = 0; index < argv.length; index++) {
     if (argv[index] === "--game") {
       game = argv[index + 1] ?? "";
       index++;
+    } else if (argv[index] === "--keyword-source" || argv[index] === "--page-plan") {
+      keywordSource = argv[index + 1] ?? "";
+      index++;
+    } else if (argv[index] === "--publish") {
+      publish = true;
+    } else if (argv[index] === "--no-publish") {
+      publish = false;
+    } else if (argv[index] === "--message" || argv[index] === "-m") {
+      message = argv[index + 1] ?? "";
+      index++;
     } else {
       passthrough.push(argv[index]);
     }
   }
-  return { game, passthrough };
+  return { game, keywordSource, publish, message, passthrough };
 }
 
-async function runCollect(gameSlug, passthrough) {
+async function git(args) {
+  const { stdout } = await execFileAsync("git", args, {
+    cwd: ROOT,
+    maxBuffer: 10 * 1024 * 1024,
+  });
+  return stdout;
+}
+
+function runProjectCommand(command, cwd = ROOT) {
+  console.log(`publish command: ${command}`);
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, {
+      cwd,
+      stdio: "inherit",
+      shell: true,
+    });
+    child.on("error", reject);
+    child.on("exit", (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`publish command exited with code ${code}: ${command}`));
+    });
+  });
+}
+
+function normalizePublishPaths(paths, gameSlug) {
+  const defaults = [
+    path.join("content", gameSlug),
+    path.join("data", gameSlug),
+  ];
+  const requested = paths?.length ? paths : defaults;
+  const normalized = new Set();
+
+  for (const requestedPath of requested) {
+    if (typeof requestedPath !== "string" || requestedPath.trim() === "") {
+      throw new Error("publish.paths entries must be non-empty strings");
+    }
+
+    const absolute = path.resolve(ROOT, requestedPath);
+    const relative = path.relative(ROOT, absolute);
+    if (relative === "" || relative.startsWith("..") || path.isAbsolute(relative)) {
+      throw new Error(`publish path must stay inside the project: ${requestedPath}`);
+    }
+    if (
+      relative === ".env" ||
+      relative.startsWith(`.env${path.sep}`) ||
+      relative === ".cache" ||
+      relative.startsWith(`.cache${path.sep}`) ||
+      /(^|[/\\])\.env($|[/\\])/.test(relative)
+    ) {
+      throw new Error(`refusing to publish protected path: ${relative}`);
+    }
+
+    normalized.add(relative.split(path.sep).join("/"));
+  }
+
+  return [...normalized];
+}
+
+function parseStatusEntries(output) {
+  const fields = output.split("\0").filter(Boolean);
+  const paths = new Set();
+  for (let index = 0; index < fields.length; index += 1) {
+    const entry = fields[index];
+    if (entry.length < 4) continue;
+    paths.add(entry.slice(3));
+    if (entry.startsWith("R") || entry.startsWith("C")) {
+      const target = fields[index + 1];
+      if (target) {
+        paths.add(target);
+        index += 1;
+      }
+    }
+  }
+  return [...paths];
+}
+
+function pathIsAllowed(filePath, allowedPaths) {
+  const normalized = path.normalize(filePath).split(path.sep).join("/");
+  return allowedPaths.some(
+    (allowed) => normalized === allowed || normalized.startsWith(`${allowed}/`),
+  );
+}
+
+function assertNoSecrets(diff) {
+  const patterns = [
+    /^\+.*\b(SERPER_API_KEY|CLOUDFLARE_API_TOKEN|TRELLO_API_KEY|TRELLO_TOKEN)\s*[:=]\s*\S+/im,
+    /^\+.*\b(api[_-]?key|token)\s*[:=]\s*["']?[A-Za-z0-9_-]{20,}/im,
+    /^\+.*\bsk-[A-Za-z0-9]{20,}/im,
+  ];
+  if (patterns.some((pattern) => pattern.test(diff))) {
+    throw new Error("possible secret found in staged content; publish aborted");
+  }
+}
+
+async function ensurePublishReady(gameSlug, publishConfig) {
+  try {
+    await git(["rev-parse", "--is-inside-work-tree"]);
+  } catch {
+    throw new Error(`${ROOT} is not a Git repository`);
+  }
+
+  const branch = (await git(["branch", "--show-current"])).trim();
+  const expectedBranch = publishConfig.branch ?? "main";
+  if (!branch) throw new Error("cannot publish from a detached Git HEAD");
+  if (branch !== expectedBranch) {
+    throw new Error(`publish branch is ${expectedBranch}, but current branch is ${branch}`);
+  }
+
+  try {
+    await git(["remote", "get-url", "origin"]);
+  } catch {
+    throw new Error("publish requires an origin Git remote");
+  }
+
+  if (!gameSlug) throw new Error("publish requires a game slug");
+}
+
+async function runPublish(gameSlug, game, options = {}) {
+  const publishConfig = game.publish ?? {};
+  await ensurePublishReady(gameSlug, publishConfig);
+
+  const allowedPaths = normalizePublishPaths(publishConfig.paths, gameSlug);
+  for (const command of publishConfig.commands ?? []) {
+    if (typeof command !== "string" || command.trim() === "") {
+      throw new Error("publish.commands entries must be non-empty strings");
+    }
+    await runProjectCommand(command);
+  }
+
+  const statusOutput = await git(["status", "--porcelain", "-z", "--", ...allowedPaths]);
+  const changedPaths = parseStatusEntries(statusOutput).filter((filePath) =>
+    pathIsAllowed(filePath, allowedPaths),
+  );
+
+  if (changedPaths.length === 0) {
+    console.log("publish: no relevant content changes");
+    return false;
+  }
+
+  console.log(`publish files:\n${changedPaths.map((filePath) => `- ${filePath}`).join("\n")}`);
+
+  if (publishConfig.buildCommand !== false && publishConfig.buildCommand !== null) {
+    await runProjectCommand(publishConfig.buildCommand ?? "npm run build");
+  }
+
+  await git(["add", "--", ...allowedPaths]);
+
+  const stagedOutput = await git(["diff", "--cached", "--name-only", "-z"]);
+  const stagedPaths = stagedOutput.split("\0").filter(Boolean);
+  const unexpectedPaths = stagedPaths.filter((filePath) => !pathIsAllowed(filePath, allowedPaths));
+  if (unexpectedPaths.length > 0) {
+    throw new Error(`unexpected staged files: ${unexpectedPaths.join(", ")}`);
+  }
+
+  await git(["diff", "--cached", "--check"]);
+  const stagedDiff = await git(["diff", "--cached", "-U0"]);
+  assertNoSecrets(stagedDiff);
+
+  const message =
+    options.message ||
+    publishConfig.commitMessage ||
+    `content: update ${gameSlug}`;
+  await git(["commit", "-m", message]);
+  await git(["push", "origin", `HEAD:${publishConfig.branch ?? "main"}`]);
+
+  const commit = (await git(["rev-parse", "--short", "HEAD"])).trim();
+  console.log(`published ${commit} to origin/${publishConfig.branch ?? "main"}`);
+
+  if (publishConfig.deployCommand) {
+    await runProjectCommand(publishConfig.deployCommand);
+  } else {
+    console.log("Vercel should deploy automatically from the GitHub push.");
+  }
+
+  return true;
+}
+
+function extractPageKeywords(page, seen) {
+  const values = [
+    page.keyword,
+    page.primaryKeyword,
+    page.primary_keyword,
+    page.query,
+  ];
+
+  for (const key of ["keywords", "secondaryKeywords", "secondary_keywords"]) {
+    const value = page[key];
+    if (Array.isArray(value)) values.push(...value);
+    else if (value && typeof value === "object") values.push(...Object.values(value).flat());
+  }
+
+  if (page.keywordGroups && typeof page.keywordGroups === "object") {
+    for (const group of Object.values(page.keywordGroups)) {
+      if (Array.isArray(group)) values.push(...group);
+      else if (group && typeof group === "object") values.push(...Object.values(group).flat());
+    }
+  }
+
+  const keywords = [];
+  for (const value of values.flat()) {
+    if (typeof value !== "string") continue;
+    const keyword = clean(value);
+    if (keyword.length < 2 || seen.has(keyword.toLowerCase())) continue;
+    seen.add(keyword.toLowerCase());
+    keywords.push(keyword);
+  }
+  return keywords;
+}
+
+function keywordPackFromPages(raw) {
+  const pages = Array.isArray(raw)
+    ? raw
+    : raw.pages ?? raw.documents ?? raw.items ?? raw.candidates;
+  if (!Array.isArray(pages)) {
+    throw new Error("page JSON must contain a pages, documents, items, or candidates array");
+  }
+
+  const seen = new Set();
+  const grouped = new Map();
+  for (const page of pages) {
+    if (!page || typeof page !== "object") continue;
+    const category = clean(
+      page.category ?? page.group ?? page.collection ?? page.pageType ?? "Keywords",
+    ) || "Keywords";
+    const keywords = extractPageKeywords(page, seen);
+    if (keywords.length === 0) continue;
+    if (!grouped.has(category)) grouped.set(category, []);
+    grouped.get(category).push(...keywords);
+  }
+
+  const categories = [...grouped].map(([category, keywords]) => ({
+    category,
+    keywords,
+  }));
+  const count = categories.reduce((total, item) => total + item.keywords.length, 0);
+  if (count === 0) {
+    throw new Error("no keywords found in page JSON (looked for keyword, primaryKeyword, secondaryKeywords, keywordGroups)");
+  }
+  return { categories };
+}
+
+function normalizeCollectSource(raw, sourceFile) {
+  if (
+    raw &&
+    typeof raw === "object" &&
+    Array.isArray(raw.categories) &&
+    raw.categories.every(
+      (category) =>
+        category &&
+        typeof category === "object" &&
+        Array.isArray(category.keywords),
+    )
+  ) {
+    return { pack: { categories: raw.categories }, sourceFile };
+  }
+
+  const pages = Array.isArray(raw)
+    ? raw
+    : raw?.pages ?? raw?.documents ?? raw?.items ?? raw?.candidates;
+  if (Array.isArray(pages)) {
+    return { pack: keywordPackFromPages(raw), sourceFile };
+  }
+
+  throw new Error(`unsupported collect source format: ${sourceFile}`);
+}
+
+async function loadCollectSource(sourceFile) {
+  try {
+    return JSON.parse(await readFile(sourceFile, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw new Error(`cannot read collect source ${sourceFile}: ${error.message}`);
+  }
+}
+
+async function resolveCollectSource(gameSlug, game, override) {
+  const candidates = [];
+  if (override) candidates.push(override);
+  if (game.keywordSource) candidates.push(game.keywordSource);
+  if (game.pagePlan) candidates.push(game.pagePlan);
+
+  if (!override && !game.keywordSource && !game.pagePlan) {
+    candidates.push(
+      "page-plan.json",
+      path.join("page-plan", `${gameSlug}.json`),
+      path.join("page-plans", `${gameSlug}.json`),
+      path.join("content", gameSlug, "page-plan.json"),
+      "src/data/pages.json",
+      "src/content/posts.json",
+      path.join("keywords", `${gameSlug}.json`),
+    );
+  }
+
+  for (const candidate of candidates) {
+    const sourceFile = path.resolve(ROOT, candidate);
+    const raw = await loadCollectSource(sourceFile);
+    if (!raw) continue;
+    return normalizeCollectSource(raw, sourceFile);
+  }
+
+  throw new Error(
+    `no collect source found for ${gameSlug}; add page-plan.json or pass --keyword-source <page.json>`,
+  );
+}
+
+async function runCollect(gameSlug, passthrough, keywordSourceOverride = "") {
   const configFile = path.join(GAMES_DIR, `${gameSlug}.json`);
   const config = await readJson(configFile);
   if (!config) throw new Error(`missing ${configFile}`);
-  const keywordsFile = path.join(ROOT, "keywords", `${gameSlug}.json`);
-  if (!(await readJson(keywordsFile))) throw new Error(`missing ${keywordsFile}`);
+  const { pack, sourceFile } = await resolveCollectSource(gameSlug, config, keywordSourceOverride);
+  const generatedDir = path.join(ROOT, ".cache", "generated-keywords");
+  await mkdir(generatedDir, { recursive: true });
+  const keywordsFile = path.join(generatedDir, `${gameSlug}.json`);
+  await writeFile(keywordsFile, `${JSON.stringify(pack, null, 2)}\n`);
+
+  const keywordCount = pack.categories.reduce(
+    (total, category) => total + category.keywords.length,
+    0,
+  );
+  console.log(`collect keywords: ${keywordCount} from ${sourceFile}`);
+  const outputDir = path.resolve(ROOT, config.collect?.outputDir ?? path.join("content", gameSlug));
+  const relativeOutputDir = path.relative(ROOT, outputDir);
+  if (relativeOutputDir === "" || relativeOutputDir.startsWith("..") || path.isAbsolute(relativeOutputDir)) {
+    throw new Error("collect.outputDir must stay inside the project");
+  }
   const args = [
     GAME_MATERIAL_SCRIPT,
     "--keywords-file",
@@ -505,7 +847,7 @@ async function runCollect(gameSlug, passthrough) {
     "--game",
     config.name ?? gameSlug,
     "--output-dir",
-    path.join(ROOT, "content", gameSlug),
+    outputDir,
     "--cache-dir",
     path.join(ROOT, ".cache"),
     ...passthrough,
@@ -523,19 +865,45 @@ async function runCollect(gameSlug, passthrough) {
   });
 }
 
+async function collectOrUpdate(command, args) {
+  const { game, keywordSource, publish, message, passthrough } = args;
+  if (!game) {
+    console.error(usage());
+    process.exit(1);
+  }
+
+  const configFile = path.join(GAMES_DIR, `${game}.json`);
+  const config = await readJson(configFile);
+  if (!config) throw new Error(`missing ${configFile}`);
+
+  if (command === "update") await runSync(game);
+  await runCollect(game, passthrough, keywordSource);
+
+  const shouldPublish = publish ?? config.publish?.enabled === true;
+  if (shouldPublish) await runPublish(game, config, { message });
+}
+
 const [command = "sync", ...rest] = process.argv.slice(2);
 try {
   if (command === "sync") {
     const { game } = parseGameArgs(rest);
     await runSync(game);
   } else if (command === "collect" || command === "update") {
-    const { game, passthrough } = parseGameArgs(rest);
+    await collectOrUpdate(command, parseGameArgs(rest));
+  } else if (command === "publish") {
+    const { game, publish, message } = parseGameArgs(rest);
     if (!game) {
       console.error(usage());
       process.exit(1);
     }
-    if (command === "update") await runSync(game);
-    await runCollect(game, passthrough);
+    const configFile = path.join(GAMES_DIR, `${game}.json`);
+    const config = await readJson(configFile);
+    if (!config) throw new Error(`missing ${configFile}`);
+    if (publish === false) {
+      console.log("publish skipped by --no-publish");
+    } else {
+      await runPublish(game, config, { message });
+    }
   } else {
     console.error(`unknown command: ${command}\n${usage()}`);
     process.exit(1);

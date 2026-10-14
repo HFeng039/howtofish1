@@ -1,5 +1,16 @@
 {
   "slug": "how-to-fish",
   "name": "How to Fish",
-  "steamAppId": "4001890"
+  "steamAppId": "4001890",
+  "publish": {
+    "enabled": true,
+    "branch": "main",
+    "paths": [
+      "content/how-to-fish",
+      "data/how-to-fish"
+    ],
+    "commands": [],
+    "buildCommand": "npm run build",
+    "commitMessage": "content: update how-to-fish"
+  }
 }
