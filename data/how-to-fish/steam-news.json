@@ -2,6 +2,15 @@
   "appId": "4001890",
   "items": [
     {
+      "gid": "1849827110443520",
+      "title": "How to Fish in The 2026 Steam Awards? 🥹",
+      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1849827110443520",
+      "author": "contact",
+      "feedLabel": "Community Announcements",
+      "date": "2026-11-23T19:43:28.000Z",
+      "excerpt": "Helo 👋If you want, you can now vote for How to Fish to be nominated to The 2026 Steam Awards 😳Best,Carl-Vilhelm & Melvin"
+    },
+    {
       "gid": "1846018067940924",
       "title": "How to Fish продалась тиражом в 10 миллионов копий - рыболовный шутер готовится к выходу на консолях",
       "url": "https://steamstore-a.akamaihd.net/news/externalpost/PlayGround.ru - официальная группа/1846018067940924",
@@ -171,16 +180,7 @@
       "feedLabel": "Community Announcements",
       "date": "2026-08-24T09:17:47.000Z",
       "excerpt": "Hello!Tiny bugfix patch. More to come this weekFixesShould now display playstation controller glyphs correctlyAlso linked fire sizzling sound to FX volume slider so it actually changes when changing FX volume//Carl-Vilhelm & Melvin"
-    },
-    {
-      "gid": "1841579228674042",
-      "title": "PATCH 1.0.6",
-      "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1841579228674042",
-      "author": "contact",
-      "feedLabel": "Community Announcements",
-      "date": "2026-08-23T20:40:39.000Z",
-      "excerpt": "Hello!Small patch with few bugfixesFixesNow checks save file before trying to load, no longer causing fake servers being displayed with the name \"Game Name\"No longer saves server or local when application crashes. It now instead saves when the user presses the Save-, Main Menu- and Quit-button. They are still autosaved every minute so you don't lose that much progress even if you crash. //Carl-Vilhelm & Melvin"
     }
   ],
-  "fetchedAt": "2026-10-13T06:49:24.330Z"
+  "fetchedAt": "2026-11-25T08:39:32.651Z"
 }
